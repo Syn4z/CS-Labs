@@ -40,6 +40,7 @@ if __name__ == "__main__":
             case '4':
                 secondKey = input("Enter the second key (only letters, at least length 7): ").replace(" ", "").upper()
                 alphabet = keyAlphabet(secondKey)
+                print(alphabet)
                 if not secondKey.isalpha() or len(secondKey) < 7:
                     print("Invalid key. It should contain only latin alphabet letters and have a length of at least 7.")
                     continue
