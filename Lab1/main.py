@@ -38,14 +38,20 @@ if __name__ == "__main__":
                     print("Invalid key. It should be an integer between 1 and 25.")
                     continue
             case '4':
-                secondKey = input("Enter the second key (only letters, at least length 7): ").replace(" ", "").upper()
+                secondKey = input("Enter the second key (only latin alphabet letters, at least length 7): ").replace(" ", "").upper()
                 alphabet = keyAlphabet(secondKey)
-                print(alphabet)
+                print("New alphabet:", alphabet)
                 if not secondKey.isalpha() or len(secondKey) < 7:
                     print("Invalid key. It should contain only latin alphabet letters and have a length of at least 7.")
                     continue
             case '5':
                 sign = 1
+                if not textMessage:
+                    print("Please enter a text message.")
+                    continue
+                if not firstKey:
+                    print("Please enter a first key.")
+                    continue
                 encryptedMessage = caesarCipherImpl(textMessage, int(firstKey), sign, alphabet)
                 print("Encrypted Message:", encryptedMessage)
             case '6':

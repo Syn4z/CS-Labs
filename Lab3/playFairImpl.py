@@ -33,55 +33,6 @@ def crypt(pair, matrix, operation):
         return decryptedPair
 
 
-def menu():
-    print("1. Input")
-    print("2. Encrypt")
-    print("3. Decrypt")
-    print("4. Exit")
-    while True:
-        try:
-            choice = int(input("Enter choice: "))
-            if choice < 1 or choice > 4:
-                raise ValueError("Choice must be 1-4")
-            else:
-                return choice
-        except ValueError as e:
-            print(e)
-            continue
-
-
-def checkInputs():
-    result = []
-    while True:
-        try:
-            key = input("Enter key: ")
-            for char in key:
-                if not char.isalpha() and char != " ":
-                    raise ValueError("Key must be a string from Romanian alphabet")
-            if len(key) <= 7:
-                raise ValueError("Key must be at least 7 characters long")
-            result.append(key)
-            break
-        except ValueError as e:
-            print(e)
-            continue
-
-    while True:
-        try:
-            message = input("Enter message/cryptogram: ")
-            if len(message) == 0:
-                raise ValueError("Empty input not allowed")
-            for char in message:
-                if not char.isalpha() and char != " ":
-                    raise ValueError("Message must be a string from Romanian alphabet")
-            result.append(message)
-            break
-        except ValueError as e:
-            print(e)
-            continue
-    return result
-
-
 def insertBetweenRepeating(message):
     for i in range(len(message) - 1):
         if message[i] == message[i + 1]:
