@@ -40,8 +40,10 @@ def desRound(LiMinus1, RiMinus1, subkey):
 
 
 LiMinus1Input = generateRandomInput(32)
+print("LiMinus1: ", LiMinus1Input)
 RiMinus1Input = generateRandomInput(32)
 subkeyInput = generateRandomInput(48)
+print("Subkey: ", subkeyInput)
 
 displayTable(expansionTable, "Expansion")
 displayTable(permutationTable, "\nPermutation")
