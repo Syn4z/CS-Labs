@@ -1,4 +1,5 @@
 from rsa import *
+import gmpy2
 
 # Function to convert ASCII to hexadecimal
 def ascii_to_hex():
@@ -38,7 +39,8 @@ def hex_to_decimal(hex_list):
 
 n = 3599
 e = 7
-d = 2983
+m = 3480
+d = pow(e, -1, m)
 hex_string = ascii_to_hex()
 hex_list = [hex_string[i:i+2] for i in range(0, len(hex_string), 2)]
 decimal_result = hex_to_decimal(hex_list)
