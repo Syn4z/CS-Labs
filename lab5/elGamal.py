@@ -3,7 +3,6 @@ import random
 
 def betaGenerator(p, g, publicKey):
     betaG = pow(g, publicKey, p)
-
     return betaG
 
 
@@ -16,7 +15,6 @@ def encrypt(decimalList, g, betaG, p):
         t = pow(betaG, k, p)
         t = (t * decimalList[i]) % p
         encryptedMessage.append(t)
-
     return r, encryptedMessage
 
 
@@ -26,5 +24,4 @@ def decrypt(t, r, publicKey, p):
 
     for i in range(len(t)):
         decryptedMessage.append((r * t[i]) % p)
-
     return decryptedMessage
