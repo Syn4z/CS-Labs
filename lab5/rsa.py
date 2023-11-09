@@ -1,12 +1,8 @@
-def encrypt(decimalList, n, e):
-    encryptedMessage = []
-    for decimal in decimalList:
-        encryptedMessage.append(pow(decimal, e, n))
+def encrypt(decimal, n, e):
+    encryptedMessage = pow(decimal, e, n)
     return encryptedMessage
 
 
 def decrypt(encryptedMessage, n, d):
-    decryptedMessage = []
-    for part in encryptedMessage:
-        decryptedMessage.append(pow(part, d, n))
+    decryptedMessage = pow(encryptedMessage, d, n)
     return decryptedMessage
