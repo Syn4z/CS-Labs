@@ -1,5 +1,2 @@
 .idea
-Lab1/__pycache__
-Lab3/__pycache__
-lab4/__pycache__
-lab5/__pycache__/
+*__pycache__/
